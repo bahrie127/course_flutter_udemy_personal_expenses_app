@@ -2,7 +2,6 @@ import './transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -41,7 +40,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Personal Expenses App'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
@@ -50,6 +49,34 @@ class MyHomePage extends StatelessWidget {
               child: Text('Chart'),
               color: Colors.blue,
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Title',
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Amount',
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Add Transaction'),
+                    style: TextButton.styleFrom(
+                      primary: Colors.purple,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Column(
@@ -89,7 +116,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                         DateFormat('yyyy-MM-dd').format(tx.date),
+                          DateFormat('yyyy-MM-dd').format(tx.date),
                           style: TextStyle(
                             color: Colors.grey,
                           ),
